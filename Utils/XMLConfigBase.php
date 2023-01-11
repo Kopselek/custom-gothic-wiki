@@ -4,14 +4,22 @@ namespace GothicServer\Utils;
 
 abstract class XMLConfigBase
 {
+    protected $xml;
+    protected $root;
+
     public function __construct(
-        private string $configName
+        string $root
     ) {
-        $xml = new SimpleXMLElement("<" . $this->configName . "></" . $this->configName . ">");
+        $xml = new \SimpleXMLElement("<" . $root . "/>");
+        $this->root = $root;
+    }
 
-        $xml->addAtributa("test", "test");
-        Header('Content-type: text/xml');
+    public function __ToString(): string
+    {
+        return $this->xml->asXML();
+    }
 
-        echo $xml->asXML();
+    public function hydrate(): void
+    {
     }
 }
