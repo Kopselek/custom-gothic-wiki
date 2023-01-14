@@ -57,7 +57,7 @@ class CreaturesConfig extends XMLConfigBase
     public CreaturesName $name;
     public string $instance = "None";
     public string $type = "None";
-    public bool $agressive = false;
+    public bool $aggressive = false;
     public int $health = 0;
     public int $mana = 0;
     public int $strength = 0;
