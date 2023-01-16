@@ -59,15 +59,23 @@
 <label for="magic">Magic</label>
 <input type="number" name="magic">
 <h2>---------</h2>
-<h2>Drop</h2>
-<label for="drop-instance">Instance</label>
-<input type="text" name="drop-instance">
-<label for="drop-min">Min</label>
-<input type="number" name="drop-min">
-<label for="drop-max">Max</label>
-<input type="number" name="drop-max">
-<label for="drop-chance">Chance</label>
-<input type="number" name="drop-chance">
+
+<div id="drop">
+    <h2>Drop</h2>
+    <label for="drop-instance">Instance</label>
+    <input type="text" name="drop-instance">
+    <label for="drop-min">Min</label>
+    <input type="number" name="drop-min">
+    <label for="drop-max">Max</label>
+    <input type="number" name="drop-max">
+    <label for="drop-chance">Chance</label>
+    <input type="number" name="drop-chance">
+
+    <button class="add">Add drop</button>
+    <button class="remove">Remove drop</button>
+
+    <input type="hidden" value="1" id="total_chq">
+</div>
 <h2>---------</h2>
 <h2>Protection</h2>
 <label for="protection-edge">Edge</label>
@@ -132,6 +140,38 @@
         });
 
     });
+</script>
+<script type="text/javascript">
+    $('.add').on('click', add);
+    $('.remove').on('click', remove);
+
+    function add() {
+        let new_chq_no = parseInt($('#drop').val()) + 1;
+        let new_input_1 = "<label for='new_" + new_chq_no + "'><input type='text' id='new_" + new_chq_no + "'></label>";
+        let new_input_2 = "<input type='text' id='new_" + new_chq_no + "'>";
+        let new_input_3 = "<input type='text' id='new_" + new_chq_no + "'>";
+        let new_input_4 = "<input type='text' id='new_" + new_chq_no + "'>";
+        let new_input_5 = "<input type='text' id='new_" + new_chq_no + "'>";
+
+        $('#drop')
+            .append(new_input_1)
+            .append(new_input_2)
+            .append(new_input_3)
+            .append(new_input_4)
+            .append(new_input_5);
+
+
+        $('#drop').val(new_chq_no);
+    }
+
+    function remove() {
+        var last_chq_no = $('#drop').val();
+
+        if (last_chq_no > 1) {
+            $('#new_' + last_chq_no).remove();
+            $('#drop').val(last_chq_no - 1);
+        }
+    }
 </script>
 </body>
 

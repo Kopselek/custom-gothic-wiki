@@ -1,7 +1,7 @@
 <?php
 
-$index = $_POST["index"];
-$level = $_POST["level"];
+$index = (string)$_POST["index"];
+$level = (int)$_POST["level"];
 
-echo $index;
-echo $level;
+$namePolish = (string)$_POST['name-polish'];
+$nameEnglish = (string)$_POST['name-english'];
