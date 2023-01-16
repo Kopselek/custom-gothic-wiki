@@ -2,7 +2,7 @@
 
 namespace GothicServer\Repository;
 
-use GothicServer\Utils\CreaturesConfig;
+use GothicServer\Model\CreaturesConfig;
 
 class CreatureConfigRepository extends BaseRepository
 {

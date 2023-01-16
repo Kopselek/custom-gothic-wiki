@@ -2,7 +2,7 @@
 
 namespace GothicServer\Model;
 
-class GothicConfig
+class CreaturesConfig
 {
     //TODO: add getter and setter
     private string $index;
@@ -37,4 +37,20 @@ class GothicConfig
     private string $weapon_magic;
 
     //TODO: Visual is for humans have to do smth
+
+    /**
+     * @return string
+     */
+    public function getIndex(): string
+    {
+        return $this->index;
+    }
+
+    /**
+     * @param string $index
+     */
+    public function setIndex(string $index): void
+    {
+        $this->index = $index;
+    }
 }

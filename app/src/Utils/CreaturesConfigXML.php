@@ -2,8 +2,13 @@
 
 namespace GothicServer\Utils;
 
-class CreaturesConfig extends XMLConfigBase
+class CreaturesConfigXML extends XMLConfigBase
 {
+    public function __construct()
+    {
+        parent::__construct("creatures");
+    }
+
     public string $index = "None";
     public int $level = 0;
     public CreaturesName $name;
