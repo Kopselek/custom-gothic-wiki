@@ -11,7 +11,7 @@ class CreaturesConfig
     private string $name_english;
     private string $instance;
     private string $type;
-    private bool $aggresive;
+    private int $aggressive;
     private int $health;
     private int $mana;
     private int $strength;
@@ -19,9 +19,9 @@ class CreaturesConfig
     private int $experience;
     private int $damage_melee;
     private int $damage_meleeweapon;
-    private int $damage_rangedweapond;
+    private int $damage_rangedweapon;
     private int $damage_magic;
-    //TODO: creatures drop
+    private string $drop;
     private int $protection_edge;
     private int $protection_blunt;
     private int $protection_point;
