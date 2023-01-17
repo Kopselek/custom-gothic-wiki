@@ -1,6 +1,6 @@
 <?php
 
-namespace GothicServer\Utils;
+namespace App\Utils;
 
 abstract class XMLConfigBase
 {

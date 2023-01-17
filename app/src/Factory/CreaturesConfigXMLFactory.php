@@ -1,9 +1,9 @@
 <?php
 
-namespace GothicServer\Factory;
+namespace App\Factory;
 
-use GothicServer\Model\CreaturesConfig;
-use GothicServer\Utils\CreaturesConfigXML;
+use App\Model\CreaturesConfig;
+use App\Utils\CreaturesConfigXML;
 
 class CreaturesConfigXMLFactory
 {
@@ -11,6 +11,9 @@ class CreaturesConfigXMLFactory
     {
         $xml = new CreaturesConfigXML();
         $xml->index = $creaturesConfig->getIndex();
+        $xml->level = $creaturesConfig->getLevel();
+        $xml->name->polish = $creaturesConfig->getNamePolish();
+        $xml->name->english = $creaturesConfig->getNameEnglish();
         //TODO: add rest of parameters like up
         return $xml;
     }

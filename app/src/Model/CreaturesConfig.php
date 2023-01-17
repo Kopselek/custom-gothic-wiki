@@ -1,13 +1,13 @@
 <?php
 
-namespace GothicServer\Model;
+namespace App\Model;
 
 class CreaturesConfig
 {
     private string $index;
     private int $level;
-//    private string $name_polish;
-//    private string $name_english;
+    private string $name_polish;
+    private string $name_english;
 //    private string $instance;
 //    private string $type;
 //    private int $aggressive;
@@ -34,8 +34,6 @@ class CreaturesConfig
 //    private string $weapon_armor;
 //    private string $weapon_shield;
 //    private string $weapon_magic;
-
-    //TODO: Visual is for humans have to do smth
 
     /**
      * @return string
@@ -67,5 +65,37 @@ class CreaturesConfig
     public function setLevel(int $level): void
     {
         $this->level = $level;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNamePolish(): string
+    {
+        return $this->name_polish;
+    }
+
+    /**
+     * @param string $name_polish
+     */
+    public function setNamePolish(string $name_polish): void
+    {
+        $this->name_polish = $name_polish;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNameEnglish(): string
+    {
+        return $this->name_english;
+    }
+
+    /**
+     * @param string $name_english
+     */
+    public function setNameEnglish(string $name_english): void
+    {
+        $this->name_english = $name_english;
     }
 }
