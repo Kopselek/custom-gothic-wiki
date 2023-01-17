@@ -1,0 +1,37 @@
+CREATE TABLE `creature_config`
+(
+    `id` INT AUTO_INCREMENT,
+    `index` TEXT,
+    `level` INT,
+    `name_polish` TEXT,
+    `name_english` TEXT,
+    `instance` TEXT,
+    `type` TEXT,
+    `aggressive` TINYINT(1),
+    `health` INT,
+    `mana` INT,
+    `strength` INT,
+    `magiclevel` INT,
+    `experience` INT,
+    `damage_melee` INT,
+    `damage_meleeweapon` INT,
+    `damage_rangedweapon` INT,
+    `damage_magic` INT,
+    `drop` TEXT,
+    `protection_edge` INT,
+    `protection_blunt` INT,
+    `protection_point` INT,
+    `protection_fire` INT,
+    `protection_magic` INT,
+    `mindistance` INT,
+    `maxdistance` INT,
+    `bonusdistance` INT,
+    `respawn` INT,
+    `weapon_meeleweapon` TEXT,
+    `weapon_armor` TEXT,
+    `weapon_shield` TEXT,
+    `weapon_magic` TEXT,
+    PRIMARY KEY (`id`)
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4
+  COLLATE utf8mb4_unicode_520_ci;
