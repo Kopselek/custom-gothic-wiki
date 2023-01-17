@@ -1,3 +1,8 @@
 <?php
+include __DIR__ . "/../Autoloader.php";
+use GothicServer\Repository\CreatureConfigRepository;
 
-echo 'Hello world';
+$creatureConfigRepository = new CreatureConfigRepository();
+$creatureConfig = $creatureConfigRepository->findAll();
+
+print_r($creatureConfig);

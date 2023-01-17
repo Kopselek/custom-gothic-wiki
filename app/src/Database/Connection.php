@@ -18,10 +18,10 @@ class Connection
 
     private function __construct()
     {
-        $dsn = "mysql:host={$_ENV['MYSQL_HOST']};dbname={$_ENV['MYSQL_DATABASE']};port={$_ENV['MYSQL_PORT']}";
+        $dsn = "mysql:host={$_ENV['MARIADB_HOST']};dbname={$_ENV['MARIADB_DATABASE']};port={$_ENV['MARIADB_PORT']}";
 
         try {
-            $this->pdo = new PDO($dsn, $_ENV['MYSQL_USER'], $_ENV['MYSQL_PASSWORD'], self::OPTIONS);
+            $this->pdo = new PDO($dsn, $_ENV['MARIADB_USER'], $_ENV['MARIADB_PASSWORD'], self::OPTIONS);
         } catch (PDOException $exception) {
             throw new PDOException($exception->getMessage(), (int) $exception->getCode());
         }
