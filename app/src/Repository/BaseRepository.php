@@ -1,8 +1,8 @@
 <?php
 
-namespace GothicServer\Repository;
+namespace App\Repository;
 
-use GothicServer\Database\Connection;
+use App\Database\Connection;
 
 abstract class BaseRepository
 {

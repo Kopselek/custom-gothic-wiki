@@ -1,6 +1,6 @@
 <?php
 
-namespace GothicServer\Database;
+namespace App\Database;
 
 use PDO;
 use PDOException;
@@ -12,7 +12,7 @@ class Connection
     private string $charset = 'utf8mb4';
 
     private const OPTIONS = [
-        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
     ];
 
@@ -23,7 +23,7 @@ class Connection
         try {
             $this->pdo = new PDO($dsn, $_ENV['MARIADB_USER'], $_ENV['MARIADB_PASSWORD'], self::OPTIONS);
         } catch (PDOException $exception) {
-            throw new PDOException($exception->getMessage(), (int) $exception->getCode());
+            throw new PDOException($exception->getMessage(), (int)$exception->getCode());
         }
     }
 
