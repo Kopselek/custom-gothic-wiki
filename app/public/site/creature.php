@@ -1,4 +1,6 @@
-<?php ?>
+<?php
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,11 +19,27 @@
         }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        jQuery(document).on('submit', function (e) {
+            let form = jQuery(e.target);
+            if (form.is("#creaturesForm")) { // check if this is the form that you want (delete this check to apply this to all forms)
+                e.preventDefault();
+                jQuery.ajax({
+                    type: "POST",
+                    url: "../ajax/creatures.ajax.php",
+                    data: form.serializeArray(), // serializes the form's elements.
+                    success: function (data) {
+                        alert(data); // show response from the php script. (use the developer toolbar console, firefox firebug or chrome inspector console)
+                    }
+                });
+            }
+        });
+    </script>
 </head>
 <body>
 
-<form action="./Ajax/creatures.ajax.php" name="creaturesForm" method="POST">
-    <label for="index[]">Index</label>
+<form id="creaturesForm">
+    <label for="index">Index</label>
     <input type="text" name="index">
     <label for="level">Level</label>
     <input type="number" name="level">
