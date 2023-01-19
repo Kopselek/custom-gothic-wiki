@@ -44,7 +44,4 @@ $weapon = $_POST['weapon'];
 // ex $visual['bodymodel']
 $visual = $_POST['visual'];
 
-
-print_r($name['polish']);
-print_r($drop[1]['instance']);
-print_r($visual['bodymodel']);
+print_r($_POST);
