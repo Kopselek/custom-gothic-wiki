@@ -1,11 +1,11 @@
-#in app dir
+# in app dir
 
 composer install --ignore-platform-reqs
 
 composer dump-autoload
 
-#install sql in sql/install.sql
+# install sql in sql/install.sql
 
-#in root dir
+# in root dir
 
 docker compose up --build -d
