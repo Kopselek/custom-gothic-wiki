@@ -28,7 +28,7 @@ CREATE TABLE `creature_config`
     `maxdistance`         INT,
     `bonusdistance`       INT,
     `respawn`             INT,
-    `weapon_meeleweapon`  TEXT,
+    `weapon_meleeweapon`  TEXT,
     `weapon_armor`        TEXT,
     `weapon_shield`       TEXT,
     `weapon_magic`        TEXT,

@@ -24,12 +24,22 @@
             let form = jQuery(e.target);
             if (form.is("#creaturesForm")) { // check if this is the form that you want (delete this check to apply this to all forms)
                 e.preventDefault();
+                var formSerialized = form.serializeArray();
+
+                for (let i = 0; i < formSerialized.length; i++) {
+                    if (formSerialized[i]["name"] === "aggressive") {
+                        formSerialized.splice(i, 1);
+                        break;
+                    }
+                }
+
+                formSerialized.push({name: "aggressive", value: Boolean($("#aggressive").is(":checked"))});
                 jQuery.ajax({
                     type: "POST",
                     url: "../ajax/creatures.ajax.php",
-                    data: form.serializeArray(), // serializes the form's elements.
+                    data: formSerialized, // serializes the form's elements.
                     success: function (data) {
-                        alert(data); // show response from the php script. (use the developer toolbar console, firefox firebug or chrome inspector console)
+                        alert("Dodano Creature"); // show response from the php script. (use the developer toolbar console, firefox firebug or chrome inspector console)
                     }
                 });
             }
@@ -55,7 +65,7 @@
     <label for="type">Type</label>
     <input type="text" name="type">
     <label for="aggressive">Aggressive</label>
-    <input type="checkbox" name="aggressive">
+    <input type="checkbox" name="aggressive" id="aggressive">
     <label for="health">Health</label>
     <input type="number" name="health">
     <label for="mana">Mana</label>

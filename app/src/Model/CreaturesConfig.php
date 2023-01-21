@@ -10,7 +10,7 @@ class CreaturesConfig
     private string $name_english;
     private string $instance;
     private string $type;
-    private int $aggressive;
+    private bool $aggressive;
     private int $health;
     private int $mana;
     private int $strength;
@@ -133,17 +133,17 @@ class CreaturesConfig
     }
 
     /**
-     * @return int
+     * @return bool
      */
-    public function getAggressive(): int
+    public function getAggressive(): bool
     {
         return $this->aggressive;
     }
 
     /**
-     * @param int $aggressive
+     * @param bool $aggressive
      */
-    public function setAggressive(int $aggressive): void
+    public function setAggressive(bool $aggressive): void
     {
         $this->aggressive = $aggressive;
     }

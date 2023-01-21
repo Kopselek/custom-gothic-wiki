@@ -1,24 +1,24 @@
 <?php
 
-include __DIR__ . "/../Autoloader.php";
+include __DIR__ . "/../../Autoloader.php";
 
 use App\Manager\CreaturesManager;
 use App\Model\CreaturesConfig;
 
 $index = $_POST['index'];
-$level = $_POST['level'];
+$level = (int)$_POST['level'];
 
 //name
 $name = $_POST['name'];
 
 $instance = $_POST['instance'];
 $type = $_POST['type'];
-$health = $_POST['health'];
-$mana = $_POST['mana'];
-$strength = $_POST['strength'];
-$magicLevel = $_POST['magiclevel'];
-$dexterity = $_POST['dexterity'];
-$experience = $_POST['experience'];
+$health = (int)$_POST['health'];
+$mana = (int)$_POST['mana'];
+$strength = (int)$_POST['strength'];
+$magicLevel = (int)$_POST['magiclevel'];
+$dexterity = (int)$_POST['dexterity'];
+$experience = (int)$_POST['experience'];
 
 //damage
 // inside damage = ['melee']['meleeweapon']['ranged']['magic']
@@ -34,10 +34,10 @@ $damage = $_POST['damage'];
 //inside protection array = [edge][blunt][point][fire][magic]
 $protection = $_POST['protection'];
 
-$minDistance = $_POST['mindistance'];
-$maxDistance = $_POST['maxdistance'];
-$bonusDistance = $_POST['bonusdistance'];
-$respawn = $_POST['respawn'];
+$minDistance = (int)$_POST['mindistance'];
+$maxDistance = (int)$_POST['maxdistance'];
+$bonusDistance = (int)$_POST['bonusdistance'];
+$respawn = (int)$_POST['respawn'];
 
 //weapon
 // inside weapon ['meeleweapon']['armor']['shield']['magic']
@@ -53,6 +53,9 @@ $model->setNameEnglish($name['english']);
 
 $model->setInstance($instance);
 $model->setType($type);
+$aggressive = False; //php jest spierdolony nie wiem czemu tak trzeba
+if(strtoupper($_POST["aggressive"]) == "TRUE") $aggressive = True;
+$model->setAggressive($aggressive);
 $model->setHealth($health);
 $model->setMana($mana);
 $model->setStrength($strength);
@@ -60,26 +63,26 @@ $model->setMagiclevel($magicLevel);
 $model->setDexterity($dexterity);
 $model->setExperience($experience);
 
-$model->setDamageMelee($damage['melee']);
-$model->setDamageMeleeweapon($damage['meleeweapon']);
-$model->setDamageRangedweapon($damage['ranged']);
-$model->setDamageMagic($damage['magic']);
+$model->setDamageMelee((int)$damage['melee']);
+$model->setDamageMeleeweapon((int)$damage['meleeweapon']);
+$model->setDamageRangedweapon((int)$damage['ranged']);
+$model->setDamageMagic((int)$damage['magic']);
 
-$model->setProtectionEdge($protection['edge']);
-$model->setProtectionBlunt($protection['blunt']);
-$model->setProtectionPoint($protection['point']);
-$model->setProtectionFire($protection['fire']);
-$model->setProtectionMagic($protection['magic']);
+$model->setProtectionEdge((int)$protection['edge']);
+$model->setProtectionBlunt((int)$protection['blunt']);
+$model->setProtectionPoint((int)$protection['point']);
+$model->setProtectionFire((int)$protection['fire']);
+$model->setProtectionMagic((int)$protection['magic']);
 
 $model->setMindistance($minDistance);
 $model->setMaxdistance($maxDistance);
 $model->setBonusdistance($bonusDistance);
 $model->setRespawn($respawn);
 
-$model->setWeaponMeleeweapon($weapon['meleeweapon']);
-$model->setWeaponArmor($weapon['armor']);
-$model->setWeaponShield($weapon['shield']);
-$model->setWeaponMagic($weapon['magic']);
+$model->setWeaponMeleeweapon((int)$weapon['meleeweapon']);
+$model->setWeaponArmor((int)$weapon['armor']);
+$model->setWeaponShield((int)$weapon['shield']);
+$model->setWeaponMagic((int)$weapon['magic']);
 
 $creaturesManager = new CreaturesManager();
 $creaturesManager->create($model);

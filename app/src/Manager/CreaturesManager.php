@@ -8,7 +8,7 @@ class CreaturesManager extends BaseManager
 {
     public function create(CreaturesConfig $model)
     {
-        $sql = "INSERT INTO creature_config(index, level, name_polish, name_english, instance, type, aggressive, health, mana, strength, magiclevel, dexterity, experience, damage_melee, damage_meleeweapon, damage_rangedweapon, damage_magic, drop, protection_edge, protection_blunt, protection_point, protection_fire, protection_magic, mindistance, maxdistance, bonusdistance, respawn, weapon_meleeweapon, weapon_armor, weapon_shield, weapon_magic) 
+        $sql = "INSERT INTO creature_config(`index`, level, name_polish, name_english, instance, type, aggressive, health, mana, strength, magiclevel, dexterity, experience, damage_melee, damage_meleeweapon, damage_rangedweapon, damage_magic, `drop`, protection_edge, protection_blunt, protection_point, protection_fire, protection_magic, mindistance, maxdistance, bonusdistance, respawn, weapon_meleeweapon, weapon_armor, weapon_shield, weapon_magic) 
                 VALUES (:index, :level, :name_polish, :name_english, :instance, :type, :aggressive, :health, :mana, :strength, :magiclevel, :dexterity, :experience, :damage_melee, :damage_meleeweapon, :damage_rangedweapon, :damage_magic, :drop, :protection_edge, :protection_blunt, :protection_point, :protection_fire, :protection_magic, :mindistance, :maxdistance, :bonusdistance, :respawn, :weapon_meleeweapon, :weapon_armor, :weapon_shield, :weapon_magic)";
 
         $stmt = $this->connection->prepare($sql);
@@ -20,7 +20,7 @@ class CreaturesManager extends BaseManager
             'name_english' => $model->getNameEnglish(),
             'instance' => $model->getInstance(),
             'type' => $model->getType(),
-            'aggresive' => $model->getAggressive(),
+            'aggressive' => (int)$model->getAggressive(),
             'health' => $model->getHealth(),
             'mana' => $model->getMana(),
             'strength' => $model->getStrength(),
@@ -32,6 +32,7 @@ class CreaturesManager extends BaseManager
             'damage_rangedweapon' => $model->getDamageRangedweapon(),
             'damage_magic' => $model->getDamageMagic(),
             //TODO: drop missing
+            'drop' => "test",
             'protection_edge' => $model->getProtectionEdge(),
             'protection_blunt' => $model->getProtectionBlunt(),
             'protection_point' => $model->getProtectionPoint(),

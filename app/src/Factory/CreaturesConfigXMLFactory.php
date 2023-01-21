@@ -43,7 +43,7 @@ class CreaturesConfigXMLFactory
         $xml->bonusdistance = $creaturesConfig->getBonusdistance();
         $xml->respawn = $creaturesConfig->getRespawn();
 
-        $xml->weapon->meeleweapon = $creaturesConfig->getWeaponMeeleweapon();
+        $xml->weapon->meeleweapon = $creaturesConfig->getWeaponMeleeweapon();
         $xml->weapon->armor = $creaturesConfig->getWeaponArmor();
         $xml->weapon->shield = $creaturesConfig->getWeaponShield();
         $xml->weapon->magic = $creaturesConfig->getWeaponMagic();
