@@ -8,8 +8,8 @@ class CreaturesManager extends BaseManager
 {
     public function create(CreaturesConfig $model)
     {
-        $sql = "INSERT INTO creature_config(index, level, name_polish, name_english, instance, type, aggressive, health, mana, strength, magiclevel, experience, damage_melee, damage_meleeweapon, damage_rangedweapon, damage_magic, drop, protection_edge, protection_blunt, protection_point, protection_fire, protection_magic, mindistance, maxdistance, bonusdistance, respawn, weapon_meeleweapon, weapon_armor, weapon_shield, weapon_magic) 
-                VALUES (:index, :level, :name_polish, :name_english, :instance, :type, :aggressive, :health, :mana, :strength, :magiclevel, :experience, :damage_melee, :damage_meleeweapon, :damage_rangedweapon, :damage_magic, :drop, :protection_edge, :protection_blunt, :protection_point, :protection_fire, :protection_magic, :mindistance, :maxdistance, :bonusdistance, :respawn, :weapon_meeleweapon, :weapon_armor, :weapon_shield, :weapon_magic)";
+        $sql = "INSERT INTO creature_config(index, level, name_polish, name_english, instance, type, aggressive, health, mana, strength, magiclevel, dexterity, experience, damage_melee, damage_meleeweapon, damage_rangedweapon, damage_magic, drop, protection_edge, protection_blunt, protection_point, protection_fire, protection_magic, mindistance, maxdistance, bonusdistance, respawn, weapon_meleeweapon, weapon_armor, weapon_shield, weapon_magic) 
+                VALUES (:index, :level, :name_polish, :name_english, :instance, :type, :aggressive, :health, :mana, :strength, :magiclevel, :dexterity, :experience, :damage_melee, :damage_meleeweapon, :damage_rangedweapon, :damage_magic, :drop, :protection_edge, :protection_blunt, :protection_point, :protection_fire, :protection_magic, :mindistance, :maxdistance, :bonusdistance, :respawn, :weapon_meleeweapon, :weapon_armor, :weapon_shield, :weapon_magic)";
 
         $stmt = $this->connection->prepare($sql);
 
@@ -25,6 +25,7 @@ class CreaturesManager extends BaseManager
             'mana' => $model->getMana(),
             'strength' => $model->getStrength(),
             'magiclevel' => $model->getMagiclevel(),
+            'dexterity' => $model->getDexterity(),
             'experience' => $model->getExperience(),
             'damage_melee' => $model->getDamageMelee(),
             'damage_meleeweapon' => $model->getDamageMeleeweapon(),
@@ -40,7 +41,7 @@ class CreaturesManager extends BaseManager
             'maxdistance' => $model->getMaxdistance(),
             'bonusdistance' => $model->getBonusdistance(),
             'respawn' => $model->getRespawn(),
-            'weapon_meeleweapon' => $model->getWeaponMeeleweapon(),
+            'weapon_meleeweapon' => $model->getWeaponMeleeweapon(),
             'weapon_armor' => $model->getWeaponArmor(),
             'weapon_shield' => $model->getWeaponShield(),
             'weapon_magic' => $model->getWeaponMagic()

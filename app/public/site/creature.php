@@ -71,79 +71,79 @@
     <h2>---------</h2>
     <h2>Damage</h2>
     <label for="meele-damage">Meele</label>
-    <input type="number" name="damage[meele]">
+    <input type="number" name="damage[melee]">
     <label for="meeleweapon-damage">Meele weapon</label>
-    <input type="number" name="damage[meeleweapon]">
+    <input type="number" name="damage[meleeweapon]">
     <label for="ranged-damage">Ranged weapon</label>
     <input type="number" name="damage[ranged]">
     <label for="magic">Magic</label>
     <input type="number" name="damage[magic]">
     <h2>---------</h2>
 
-    <div id="drop">
-        <h2>Drop</h2>
-        <button type="button">+</button>
-        <button type="button">-</button>
-        <div class="drop-1">
-            <h3>Item 1</h3>
-            <label for="drop-instance">Instance</label>
-            <input type="text" name="drop[1][instance]">
-            <label for="drop-min">Min</label>
-            <input type="number" name="drop[1][min]">
-            <label for="drop-max">Max</label>
-            <input type="number" name="drop[1][max]">
-            <label for="drop-chance">Chance</label>
-            <input type="number" name="drop[1][chance]">
-        </div>
-
-        <div class="drop-2" hidden>
-            <h3>Item 2</h3>
-            <label for="drop-instance">Instance</label>
-            <input type="text" name="drop[2][instance]">
-            <label for="drop-min">Min</label>
-            <input type="number" name="drop[2][min]">
-            <label for="drop-max">Max</label>
-            <input type="number" name="drop[2][max]">
-            <label for="drop-chance">Chance</label>
-            <input type="number" name="drop[2][chance]">
-        </div>
-
-        <div class="drop-3" hidden>
-            <h3>Item 3</h3>
-            <label for="drop-instance">Instance</label>
-            <input type="text" name="drop[3][instance]">
-            <label for="drop-min">Min</label>
-            <input type="number" name="drop[3][min]">
-            <label for="drop-max">Max</label>
-            <input type="number" name="drop[3][max]">
-            <label for="drop-chance">Chance</label>
-            <input type="number" name="drop[3][chance]">
-        </div>
-
-        <div class="drop-4" hidden>
-            <h3>Item 4</h3>
-            <label for="drop-instance">Instance</label>
-            <input type="text" name="drop[4][instance]">
-            <label for="drop-min">Min</label>
-            <input type="number" name="drop[4][min]">
-            <label for="drop-max">Max</label>
-            <input type="number" name="drop[4][max]">
-            <label for="drop-chance">Chance</label>
-            <input type="number" name="drop[4][chance]">
-        </div>
-
-        <div class="drop-5" hidden>
-            <h3>Item 5</h3>
-            <label for="drop-instance">Instance</label>
-            <input type="text" name="drop[5][instance]">
-            <label for="drop-min">Min</label>
-            <input type="number" name="drop[5][min]">
-            <label for="drop-max">Max</label>
-            <input type="number" name="drop[5][max]">
-            <label for="drop-chance">Chance</label>
-            <input type="number" name="drop[5][chance]">
-        </div>
-
+    <!--    <div id="drop">-->
+    <!--        <h2>Drop</h2>-->
+    <!--        <button type="button">+</button>-->
+    <!--        <button type="button">-</button>-->
+    <!--        <div class="drop-1">-->
+    <!--            <h3>Item 1</h3>-->
+    <!--            <label for="drop-instance">Instance</label>-->
+    <!--            <input type="text" name="drop[1][instance]">-->
+    <!--            <label for="drop-min">Min</label>-->
+    <!--            <input type="number" name="drop[1][min]">-->
+    <!--            <label for="drop-max">Max</label>-->
+    <!--            <input type="number" name="drop[1][max]">-->
+    <!--            <label for="drop-chance">Chance</label>-->
+    <!--            <input type="number" name="drop[1][chance]">-->
+    <!--        </div>-->
+    <!---->
+    <!--        <div class="drop-2" hidden>-->
+    <!--            <h3>Item 2</h3>-->
+    <!--            <label for="drop-instance">Instance</label>-->
+    <!--            <input type="text" name="drop[2][instance]">-->
+    <!--            <label for="drop-min">Min</label>-->
+    <!--            <input type="number" name="drop[2][min]">-->
+    <!--            <label for="drop-max">Max</label>-->
+    <!--            <input type="number" name="drop[2][max]">-->
+    <!--            <label for="drop-chance">Chance</label>-->
+    <!--            <input type="number" name="drop[2][chance]">-->
+    <!--        </div>-->
+    <!---->
+    <!--        <div class="drop-3" hidden>-->
+    <!--            <h3>Item 3</h3>-->
+    <!--            <label for="drop-instance">Instance</label>-->
+    <!--            <input type="text" name="drop[3][instance]">-->
+    <!--            <label for="drop-min">Min</label>-->
+    <!--            <input type="number" name="drop[3][min]">-->
+    <!--            <label for="drop-max">Max</label>-->
+    <!--            <input type="number" name="drop[3][max]">-->
+    <!--            <label for="drop-chance">Chance</label>-->
+    <!--            <input type="number" name="drop[3][chance]">-->
+    <!--        </div>-->
+    <!---->
+    <!--        <div class="drop-4" hidden>-->
+    <!--            <h3>Item 4</h3>-->
+    <!--            <label for="drop-instance">Instance</label>-->
+    <!--            <input type="text" name="drop[4][instance]">-->
+    <!--            <label for="drop-min">Min</label>-->
+    <!--            <input type="number" name="drop[4][min]">-->
+    <!--            <label for="drop-max">Max</label>-->
+    <!--            <input type="number" name="drop[4][max]">-->
+    <!--            <label for="drop-chance">Chance</label>-->
+    <!--            <input type="number" name="drop[4][chance]">-->
+    <!--        </div>-->
+    <!---->
+    <!--        <div class="drop-5" hidden>-->
+    <!--            <h3>Item 5</h3>-->
+    <!--            <label for="drop-instance">Instance</label>-->
+    <!--            <input type="text" name="drop[5][instance]">-->
+    <!--            <label for="drop-min">Min</label>-->
+    <!--            <input type="number" name="drop[5][min]">-->
+    <!--            <label for="drop-max">Max</label>-->
+    <!--            <input type="number" name="drop[5][max]">-->
+    <!--            <label for="drop-chance">Chance</label>-->
+    <!--            <input type="number" name="drop[5][chance]">-->
+    <!--        </div>-->
+    <!---->
 
     </div>
     <h2>---------</h2>
@@ -169,24 +169,14 @@
     <input type="number" name="respawn">
     <h2>---------</h2>
     <h2>Weapon</h2>
-    <label for="weapon-meeleweapon">Meele weapon</label>
-    <input type="number" name="weapon[meeleweapon]">
+    <label for="weapon-meleeweapon">Meele weapon</label>
+    <input type="number" name="weapon[meleeweapon]">
     <label for="weapon-armor">Armor</label>
     <input type="number" name="weapon[armor]">
     <label for="weapon-shield">Shield</label>
     <input type="number" name="weapon[shield]">
     <label for="weapon-magic">Magic</label>
     <input type="number" name="weapon[magic]">
-    <h2>---------</h2>
-    <h2>Visual</h2>
-    <label for="visual-bodymodel">Body model</label>
-    <input type="number" name="visual[bodymodel]">
-    <label for="visual-bodytexture">Body texture</label>
-    <input type="number" name="visual[bodytexture]">
-    <label for="visual-headmodel">Head model</label>
-    <input type="number" name="visual[headmodel]">
-    <label for="visual-headtexture">Head texture</label>
-    <input type="number" name="visual[headtexture]">
     <h2>---------</h2>
     <button type="submit">Create</button>
 

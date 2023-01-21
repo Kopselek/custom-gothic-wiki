@@ -16,6 +16,7 @@ class CreaturesConfig
     private int $strength;
     private int $magiclevel;
     private int $experience;
+    private int $dexterity;
     private int $damage_melee;
     private int $damage_meleeweapon;
     private int $damage_rangedweapon;
@@ -30,7 +31,7 @@ class CreaturesConfig
     private int $maxdistance;
     private int $bonusdistance;
     private int $respawn;
-    private string $weapon_meeleweapon;
+    private string $weapon_meleeweapon;
     private string $weapon_armor;
     private string $weapon_shield;
     private string $weapon_magic;
@@ -209,6 +210,22 @@ class CreaturesConfig
     public function setMagiclevel(int $magiclevel): void
     {
         $this->magiclevel = $magiclevel;
+    }
+
+    /**
+     * @return int
+     */
+    public function getDexterity(): int
+    {
+        return $this->dexterity;
+    }
+
+    /**
+     * @param int $dexterity
+     */
+    public function setDexterity(int $dexterity): void
+    {
+        $this->dexterity = $dexterity;
     }
 
     /**
@@ -438,17 +455,17 @@ class CreaturesConfig
     /**
      * @return string
      */
-    public function getWeaponMeeleweapon(): string
+    public function getWeaponMeleeweapon(): string
     {
-        return $this->weapon_meeleweapon;
+        return $this->weapon_meleeweapon;
     }
 
     /**
-     * @param string $weapon_meeleweapon
+     * @param string $weapon_meleeweapon
      */
-    public function setWeaponMeeleweapon(string $weapon_meeleweapon): void
+    public function setWeaponMeleeweapon(string $weapon_meleeweapon): void
     {
-        $this->weapon_meeleweapon = $weapon_meeleweapon;
+        $this->weapon_meleeweapon = $weapon_meleeweapon;
     }
 
     /**
@@ -498,4 +515,6 @@ class CreaturesConfig
     {
         $this->weapon_magic = $weapon_magic;
     }
+
+
 }
