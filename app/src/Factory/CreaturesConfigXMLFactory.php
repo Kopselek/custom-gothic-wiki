@@ -4,6 +4,10 @@ namespace App\Factory;
 
 use App\Model\CreaturesConfig;
 use App\Utils\CreaturesConfigXML;
+use App\Utils\CreaturesDamage;
+use App\Utils\CreaturesName;
+use App\Utils\CreaturesProtection;
+use App\Utils\CreaturesWeapon;
 
 class CreaturesConfigXMLFactory
 {
@@ -13,18 +17,20 @@ class CreaturesConfigXMLFactory
         $xml->index = $creaturesConfig->getIndex();
         $xml->level = $creaturesConfig->getLevel();
 
+        $xml->name = new CreaturesName();
         $xml->name->polish = $creaturesConfig->getNamePolish();
         $xml->name->english = $creaturesConfig->getNameEnglish();
 
         $xml->instance = $creaturesConfig->getInstance();
         $xml->type = $creaturesConfig->getType();
-        $xml->aggressive = boolval($creaturesConfig->getAggressive());
+        $xml->aggressive = $creaturesConfig->getAggressive();
         $xml->health = $creaturesConfig->getHealth();
         $xml->mana = $creaturesConfig->getMana();
         $xml->strength = $creaturesConfig->getStrength();
         $xml->magiclevel = $creaturesConfig->getMagiclevel();
         $xml->experience = $creaturesConfig->getExperience();
 
+        $xml->damage = new CreaturesDamage();
         $xml->damage->meele = $creaturesConfig->getDamageMelee();
         $xml->damage->meeleweapon = $creaturesConfig->getDamageMeleeweapon();
         $xml->damage->rangedweapon = $creaturesConfig->getDamageRangedweapon();
@@ -32,6 +38,7 @@ class CreaturesConfigXMLFactory
 
         //TODO: drop
 
+        $xml->protection = new CreaturesProtection();
         $xml->protection->edge = $creaturesConfig->getProtectionEdge();
         $xml->protection->blunt = $creaturesConfig->getProtectionBlunt();
         $xml->protection->point = $creaturesConfig->getProtectionPoint();
@@ -43,6 +50,7 @@ class CreaturesConfigXMLFactory
         $xml->bonusdistance = $creaturesConfig->getBonusdistance();
         $xml->respawn = $creaturesConfig->getRespawn();
 
+        $xml->weapon = new CreaturesWeapon();
         $xml->weapon->meeleweapon = $creaturesConfig->getWeaponMeleeweapon();
         $xml->weapon->armor = $creaturesConfig->getWeaponArmor();
         $xml->weapon->shield = $creaturesConfig->getWeaponShield();

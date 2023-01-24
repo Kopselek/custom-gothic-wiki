@@ -1,3 +1,7 @@
 <?php
+include __DIR__ . "/../../Autoloader.php";
+use App\Repository\CreatureConfigRepository;
 
-echo "Hello world - its base site when you dont set site in get";
+$creaturesRepository = new CreatureConfigRepository();
+print_r($creaturesRepository->findAll());
+

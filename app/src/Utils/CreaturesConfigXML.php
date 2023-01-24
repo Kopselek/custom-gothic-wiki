@@ -2,13 +2,8 @@
 
 namespace App\Utils;
 
-class CreaturesConfigXML extends XMLConfigBase
+class CreaturesConfigXML
 {
-    public function __construct()
-    {
-        parent::__construct("creatures");
-    }
-
     public string $index = "None";
     public int $level = 0;
     public CreaturesName $name;
@@ -29,46 +24,46 @@ class CreaturesConfigXML extends XMLConfigBase
     public int $bonusdistance = 0;
     public int $respawn = 0;
     public CreaturesWeapon $weapon;
-    public CreaturesVisual $visual;
 
-    public function hydrate(): void
+    public function hydrate(\SimpleXMLElement $xml): \SimpleXMLElement
     {
-        $this->xml->addChild('index', $this->index);
-        $this->xml->addChild('level', $this->level);
+        $xml->addChild('index', $this->index);
+        $xml->addChild('level', $this->level);
 
         // name group tag
-        $name = $this->xml->addChild('name');
+        $name = $xml->addChild('name');
         $name->addChild('polish', $this->name->polish);
         $name->addChild('english', $this->name->english);
 
         //single tags
-        $this->xml->addChild('instance', $this->instance);
-        $this->xml->addChild('type', $this->type);
-        $this->xml->addChild('aggressive', $this->aggressive);
-        $this->xml->addChild('health', $this->health);
-        $this->xml->addChild('mana', $this->mana);
-        $this->xml->addChild('strength', $this->strength);
-        $this->xml->addChild('magiclevel', $this->magiclevel);
-        $this->xml->addChild('dexterity', $this->dexterity);
-        $this->xml->addChild('experience', $this->experience);
+        $xml->addChild('instance', $this->instance);
+        $xml->addChild('type', $this->type);
+        $xml->addChild('aggressive', $this->aggressive);
+        $xml->addChild('health', $this->health);
+        $xml->addChild('mana', $this->mana);
+        $xml->addChild('strength', $this->strength);
+        $xml->addChild('magiclevel', $this->magiclevel);
+        $xml->addChild('dexterity', $this->dexterity);
+        $xml->addChild('experience', $this->experience);
 
         //damage group tag
-        $damage = $this->xml->addChild('damage');
-        $damage->xml->addChild('meele', $this->damage->meele);
-        $damage->xml->addChild('meeleweapon', $this->damage->meeleweapon);
-        $damage->xml->addChild('rangedweapon', $this->damage->rangedweapon);
-        $damage->xml->addChild('magic', $this->damage->magic);
+        $damage = $xml->addChild('damage');
+        $damage->addChild('meele', $this->damage->meele);
+        $damage->addChild('meeleweapon', $this->damage->meeleweapon);
+        $damage->addChild('rangedweapon', $this->damage->rangedweapon);
+        $damage->addChild('magic', $this->damage->magic);
 
         //drop group tag
-        $drop = $this->xml->addChild('drop');
-        $item = $drop->addChild('item');
-        $item->addAttribute('instance', $this->drop->itemInstance);
-        $item->addAttribute('min', $this->drop->min);
-        $item->addAttribute('max', $this->drop->max);
-        $item->addAttribute('chance', $this->drop->chance);
+        //@TODO
+//        $drop = $xml->addChild('drop');
+//        $item = $drop->addChild('item');
+//        $item->addAttribute('instance', $this->drop->itemInstance);
+//        $item->addAttribute('min', $this->drop->min);
+//        $item->addAttribute('max', $this->drop->max);
+//        $item->addAttribute('chance', $this->drop->chance);
 
         //protection group tag
-        $protection = $this->xml->addChild('protection');
+        $protection = $xml->addChild('protection');
         $protection->addChild('edge', $this->protection->edge);
         $protection->addChild('blunt', $this->protection->blunt);
         $protection->addChild('point', $this->protection->point);
@@ -76,24 +71,18 @@ class CreaturesConfigXML extends XMLConfigBase
         $protection->addChild('magic', $this->protection->magic);
 
         //single tags
-        $this->xml->addChild('mindistance', $this->mindistance);
-        $this->xml->addChild('maxdistance', $this->maxdistance);
-        $this->xml->addChild('bonusdistance', $this->bonusdistance);
-        $this->xml->addChild('respawn', $this->respawn);
+        $xml->addChild('mindistance', $this->mindistance);
+        $xml->addChild('maxdistance', $this->maxdistance);
+        $xml->addChild('bonusdistance', $this->bonusdistance);
+        $xml->addChild('respawn', $this->respawn);
 
         //weapon group tag
-        $weapon = $this->xml->addChild('weapon');
+        $weapon = $xml->addChild('weapon');
         $weapon->addChild('meeleweapon', $this->weapon->meeleweapon);
         $weapon->addChild('armor', $this->weapon->armor);
         $weapon->addChild('shield', $this->weapon->shield);
         $weapon->addChild('magic', $this->weapon->magic);
-
-        //visual group tag
-        $visual = $this->xml->addChild('visual');
-        $visual->addChild('bodymodel', $this->visual->bodymodel);
-        $visual->addChild('bodytexture', $this->visual->bodytexture);
-        $visual->addChild('headmodel', $this->visual->headmodel);
-        $visual->addChild('headtexture', $this->visual->headtexture);
+        return $xml;
     }
 }
 
