@@ -31,7 +31,8 @@
                     url: "../ajax/items.ajax.php",
                     data: formSerialized, // serializes the form's elements.
                     success: function(data) {
-                        alert("Dodano Item"); // show response from the php script. (use the developer toolbar console, firefox firebug or chrome inspector console)
+                        alert("Dodano Item");
+                        console.log(data);// show response from the php script. (use the developer toolbar console, firefox firebug or chrome inspector console)
                     }
                 });
             }
