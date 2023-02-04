@@ -36,3 +36,43 @@ CREATE TABLE `creature_config`
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4
   COLLATE utf8mb4_unicode_520_ci;
+
+CREATE TABLE `items_config`
+(
+    `id`                            INT AUTO_INCREMENT,
+    `type`                          TEXT,
+    `mode`                          TEXT,
+    `instance`                      TEXT,
+    `texture`                       TEXT,
+    `level`                         INT,
+    `price`                         INT,
+    `crystalslots`                  INT,
+    `strength`                      INT,
+    `dexterity`                     INT,
+    `inteligence`                   INT,
+    `equiplevel`                    INT,
+    `damage_incisors`               INT,
+    `damage_hammer`                 INT,
+    `damage_stab`                   INT,
+    `damage_element`                INT,
+    `damage_magic`                  INT,
+    `effect_mode`                   INT,
+    `effect_type`                   TEXT,
+    `effect_value`                  INT,
+    `effect_time`                   INT,
+    `bonusstrength_mode`            INT,
+    `bonusstrength_value`           INT,
+    `bonusdexterity_mode`           INT,
+    `bonusdexterity_value`          INT,
+    `bonusinteligence_mode`         INT,
+    `bonusinteligence_value`        INT,
+    `damagemonsterbonus_mode`       INT,
+    `damagemonsterbonus_value`      INT,
+    `damagemonsterbonus_type`       TEXT,
+    `name_pl`                       TEXT,
+    `name_eng`                      TEXT,
+    PRIMARY KEY (`id`)
+
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4
+  COLLATE utf8mb4_unicode_520_ci;
