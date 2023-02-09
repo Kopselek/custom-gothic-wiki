@@ -21,7 +21,7 @@ class CreaturesConfig
     private int $damage_meleeweapon;
     private int $damage_rangedweapon;
     private int $damage_magic;
-//    private string $drop;
+    private string $drop;
     private int $protection_edge;
     private int $protection_blunt;
     private int $protection_point;
@@ -514,6 +514,16 @@ class CreaturesConfig
     public function setWeaponMagic(string $weapon_magic): void
     {
         $this->weapon_magic = $weapon_magic;
+    }
+
+    public function getDrop(): string
+    {
+        return $this->drop;
+    }
+
+    public function setDrop(string $drop): void
+    {
+        $this->drop = $drop;
     }
 
 

@@ -5,6 +5,7 @@ namespace App\Factory;
 use App\Model\CreaturesConfig;
 use App\Utils\CreaturesConfigXML;
 use App\Utils\CreaturesDamage;
+use App\Utils\CreaturesDrop;
 use App\Utils\CreaturesName;
 use App\Utils\CreaturesProtection;
 use App\Utils\CreaturesWeapon;
@@ -36,7 +37,15 @@ class CreaturesConfigXMLFactory
         $xml->damage->rangedweapon = $creaturesConfig->getDamageRangedweapon();
         $xml->damage->magic = $creaturesConfig->getDamageMagic();
 
-        //TODO: drop
+        $drops = unserialize($creaturesConfig->getDrop());
+        foreach($drops as $drop) {
+            $dropNewInstance = new CreaturesDrop();
+            $dropNewInstance->itemInstance = $drop["instance"];
+            $dropNewInstance->max = (int)$drop["max"];
+            $dropNewInstance->min = (int)$drop["min"];
+            $dropNewInstance->chance = (int)$drop["chance"];
+            $xml->drop[] = $dropNewInstance;
+        }
 
         $xml->protection = new CreaturesProtection();
         $xml->protection->edge = $creaturesConfig->getProtectionEdge();
@@ -56,7 +65,6 @@ class CreaturesConfigXMLFactory
         $xml->weapon->shield = $creaturesConfig->getWeaponShield();
         $xml->weapon->magic = $creaturesConfig->getWeaponMagic();
 
-        //TODO: add rest of parameters like up
         return $xml;
     }
 }

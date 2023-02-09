@@ -48,11 +48,11 @@ $model->setInstance($instance);
 $model->setTexture($texture);
 $model->setLevel($level);
 $model->setPrice($price);
-$model->setCrystalSlots($crystalSlots);
-$model->setStregth($strength);
+$model->setCrystalslots($crystalSlots);
+$model->setStrength($strength);
 $model->setDexterity($dexterity);
 $model->setInteligence($inteligence);
-$model->setEquipLevel($equipLevel);
+$model->setEquiplevel($equipLevel);
 
 $model->setDamageIncisors($damageIncisors);
 $model->setDamageHammer($damageHammer);
@@ -65,18 +65,18 @@ $model->setEffectType($effectType);
 $model->setEffectValue($effectValue);
 $model->setEffectTime($effectTime);
 
-$model->setBonusStrengthMode($bonusStrengthMode);
-$model->setBonusStrengthValue($bonusStrengthValue);
+$model->setBonusstrengthmode($bonusStrengthMode);
+$model->setBonusstrengthvalue($bonusStrengthValue);
 
-$model->setBonusDexterityMode($bonusDexterityMode);
-$model->setBonusDexterityValue($bonusDexterityValue);
+$model->setBonusdexteritymode($bonusDexterityMode);
+$model->setBonusdexterityvalue($bonusDexterityValue);
 
-$model->setBonusInteligenceMode($bonusInteligenceMode);
-$model->setBonusInteligenceValue($bonusInteligenceValue);
+$model->setBonusinteligencemode($bonusInteligenceMode);
+$model->setBonusinteligencevalue($bonusInteligenceValue);
 
-$model->setDamageMonsterBonusMode($damageMonsterBonusMode);
-$model->setDamageMonsterBonusType($damageMonsterBonusType);
-$model->setDamageMonsterBonusValue($damageMonsterBonusValue);
+$model->setDamagemonsterbonusmode($damageMonsterBonusMode);
+$model->setDamagemonsterbonustype($damageMonsterBonusType);
+$model->setDamagemonsterbonusvalue($damageMonsterBonusValue);
 
 $model->setNamePl($namePl);
 $model->setNameEng($nameEng);

@@ -1,17 +1,18 @@
 <?php
 include __DIR__ . "/../../Autoloader.php";
-use App\Repository\CreatureConfigRepository;
-use App\Factory\CreaturesConfigXMLFactory;
-
-$creaturesRepository = new CreatureConfigRepository();
-$creatures = $creaturesRepository->findAll();
-
-$output = new \SimpleXMLElement("<root/>");
-
-foreach($creatures as $creature) {
-    $creatureXML = CreaturesConfigXMLFactory::create($creature);
-    $outputCreatures = $output->addChild("creatures");
-    $outputCreatures = $creatureXML->hydrate($outputCreatures);
+if(!isset($_GET['type'])) {
+    echo "Missing type in get";
+    die();
 }
-header('Content-type: text/xml');
-echo $output->asXML();
+switch ($_GET['type']) {
+    case "creatures":
+        $include = "generate/creatures.php";
+        break;
+    case "items":
+        $include = "generate/items.php";
+        break;
+    default:
+        $include = "site/404.php";
+}
+
+include __DIR__ . "/../" . $include;

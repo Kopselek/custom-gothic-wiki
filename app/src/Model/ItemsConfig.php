@@ -10,31 +10,31 @@ class ItemsConfig
     private string $texture;
     private int $level;
     private int $price;
-    private int $crystalSlots;
-    private int $stregth;
+    private int $crystalslots;
+    private int $strength;
     private int $dexterity;
     private int $inteligence;
-    private int $equipLevel;
-    private int $damageIncisors;
-    private int $damageHammer;
-    private int $damageStab;
-    private int $damageElement;
-    private int $damageMagic;
-    private int $effectMode;
-    private string $effectType;
-    private int $effectValue;
-    private int $effectTime;
-    private int $bonusStrengthMode;
-    private int $bonusStrengthValue;
-    private int $bonusDexterityMode;
-    private int $bonusDexterityValue;
-    private int $bonusInteligenceMode;
-    private int $bonusInteligenceValue;
-    private int $damageMonsterBonusMode;
-    private int $damageMonsterBonusValue;
-    private string $damageMonsterBonusType;
-    private string $namePl;
-    private string $nameEng;
+    private int $equiplevel;
+    private int $damage_incisors;
+    private int $damage_hammer;
+    private int $damage_stab;
+    private int $damage_element;
+    private int $damage_magic;
+    private int $effect_mode;
+    private string $effect_type;
+    private int $effect_value;
+    private int $effect_time;
+    private int $bonusstrength_mode;
+    private int $bonusstrength_value;
+    private int $bonusdexterity_mode;
+    private int $bonusdexterity_value;
+    private int $bonusinteligence_mode;
+    private int $bonusinteligence_value;
+    private int $damagemonsterbonus_mode;
+    private int $damagemonsterbonus_value;
+    private string $damagemonsterbonus_type;
+    private string $name_pl;
+    private string $name_eng;
 
 
     /**
@@ -136,33 +136,33 @@ class ItemsConfig
     /**
      * @return int
      */
-    public function getCrystalSlots(): int
+    public function getCrystalslots(): int
     {
-        return $this->crystalSlots;
+        return $this->crystalslots;
     }
 
     /**
-     * @param int $crystalSlots
+     * @param int $crystalslots
      */
-    public function setCrystalSlots(int $crystalSlots): void
+    public function setCrystalslots(int $crystalslots): void
     {
-        $this->crystalSlots = $crystalSlots;
+        $this->crystalslots = $crystalslots;
     }
 
     /**
      * @return int
      */
-    public function getStregth(): int
+    public function getStrength(): int
     {
-        return $this->stregth;
+        return $this->strength;
     }
 
     /**
-     * @param int $stregth
+     * @param int $strength
      */
-    public function setStregth(int $stregth): void
+    public function setStrength(int $strength): void
     {
-        $this->stregth = $stregth;
+        $this->strength = $strength;
     }
 
     /**
@@ -200,17 +200,17 @@ class ItemsConfig
     /**
      * @return int
      */
-    public function getEquipLevel(): int
+    public function getEquiplevel(): int
     {
-        return $this->equipLevel;
+        return $this->equiplevel;
     }
 
     /**
-     * @param int $equipLevel
+     * @param int $equiplevel
      */
-    public function setEquipLevel(int $equipLevel): void
+    public function setEquiplevel(int $equiplevel): void
     {
-        $this->equipLevel = $equipLevel;
+        $this->equiplevel = $equiplevel;
     }
 
     /**
@@ -218,15 +218,15 @@ class ItemsConfig
      */
     public function getDamageIncisors(): int
     {
-        return $this->damageIncisors;
+        return $this->damage_incisors;
     }
 
     /**
-     * @param int $damageIncisors
+     * @param int $damage_incisors
      */
-    public function setDamageIncisors(int $damageIncisors): void
+    public function setDamageIncisors(int $damage_incisors): void
     {
-        $this->damageIncisors = $damageIncisors;
+        $this->damage_incisors = $damage_incisors;
     }
 
     /**
@@ -234,15 +234,15 @@ class ItemsConfig
      */
     public function getDamageHammer(): int
     {
-        return $this->damageHammer;
+        return $this->damage_hammer;
     }
 
     /**
-     * @param int $damageHammer
+     * @param int $damage_hammer
      */
-    public function setDamageHammer(int $damageHammer): void
+    public function setDamageHammer(int $damage_hammer): void
     {
-        $this->damageHammer = $damageHammer;
+        $this->damage_hammer = $damage_hammer;
     }
 
     /**
@@ -250,15 +250,15 @@ class ItemsConfig
      */
     public function getDamageStab(): int
     {
-        return $this->damageStab;
+        return $this->damage_stab;
     }
 
     /**
-     * @param int $damageStab
+     * @param int $damage_stab
      */
-    public function setDamageStab(int $damageStab): void
+    public function setDamageStab(int $damage_stab): void
     {
-        $this->damageStab = $damageStab;
+        $this->damage_stab = $damage_stab;
     }
 
     /**
@@ -266,15 +266,15 @@ class ItemsConfig
      */
     public function getDamageElement(): int
     {
-        return $this->damageElement;
+        return $this->damage_element;
     }
 
     /**
-     * @param int $damageElement
+     * @param int $damage_element
      */
-    public function setDamageElement(int $damageElement): void
+    public function setDamageElement(int $damage_element): void
     {
-        $this->damageElement = $damageElement;
+        $this->damage_element = $damage_element;
     }
 
     /**
@@ -282,15 +282,15 @@ class ItemsConfig
      */
     public function getDamageMagic(): int
     {
-        return $this->damageMagic;
+        return $this->damage_magic;
     }
 
     /**
-     * @param int $damageMagic
+     * @param int $damage_magic
      */
-    public function setDamageMagic(int $damageMagic): void
+    public function setDamageMagic(int $damage_magic): void
     {
-        $this->damageMagic = $damageMagic;
+        $this->damage_magic = $damage_magic;
     }
 
     /**
@@ -298,15 +298,15 @@ class ItemsConfig
      */
     public function getEffectMode(): int
     {
-        return $this->effectMode;
+        return $this->effect_mode;
     }
 
     /**
-     * @param int $effectMode
+     * @param int $effect_mode
      */
-    public function setEffectMode(int $effectMode): void
+    public function setEffectMode(int $effect_mode): void
     {
-        $this->effectMode = $effectMode;
+        $this->effect_mode = $effect_mode;
     }
 
     /**
@@ -314,15 +314,15 @@ class ItemsConfig
      */
     public function getEffectType(): string
     {
-        return $this->effectType;
+        return $this->effect_type;
     }
 
     /**
-     * @param string $effectType
+     * @param string $effect_type
      */
-    public function setEffectType(string $effectType): void
+    public function setEffectType(string $effect_type): void
     {
-        $this->effectType = $effectType;
+        $this->effect_type = $effect_type;
     }
 
     /**
@@ -330,15 +330,15 @@ class ItemsConfig
      */
     public function getEffectValue(): int
     {
-        return $this->effectValue;
+        return $this->effect_value;
     }
 
     /**
-     * @param int $effectValue
+     * @param int $effect_value
      */
-    public function setEffectValue(int $effectValue): void
+    public function setEffectValue(int $effect_value): void
     {
-        $this->effectValue = $effectValue;
+        $this->effect_value = $effect_value;
     }
 
     /**
@@ -346,159 +346,159 @@ class ItemsConfig
      */
     public function getEffectTime(): int
     {
-        return $this->effectTime;
+        return $this->effect_time;
     }
 
     /**
-     * @param int $effectTime
+     * @param int $effect_time
      */
-    public function setEffectTime(int $effectTime): void
+    public function setEffectTime(int $effect_time): void
     {
-        $this->effectTime = $effectTime;
-    }
-
-    /**
-     * @return int
-     */
-    public function getBonusStrengthMode(): int
-    {
-        return $this->bonusStrengthMode;
-    }
-
-    /**
-     * @param int $bonusStrengthMode
-     */
-    public function setBonusStrengthMode(int $bonusStrengthMode): void
-    {
-        $this->bonusStrengthMode = $bonusStrengthMode;
+        $this->effect_time = $effect_time;
     }
 
     /**
      * @return int
      */
-    public function getBonusStrengthValue(): int
+    public function getBonusstrengthmode(): int
     {
-        return $this->bonusStrengthValue;
+        return $this->bonusstrength_mode;
     }
 
     /**
-     * @param int $bonusStrengthValue
+     * @param int $bonusstrength_mode
      */
-    public function setBonusStrengthValue(int $bonusStrengthValue): void
+    public function setBonusstrengthmode(int $bonusstrength_mode): void
     {
-        $this->bonusStrengthValue = $bonusStrengthValue;
-    }
-
-    /**
-     * @return int
-     */
-    public function getBonusDexterityMode(): int
-    {
-        return $this->bonusDexterityMode;
-    }
-
-    /**
-     * @param int $bonusDexterityMode
-     */
-    public function setBonusDexterityMode(int $bonusDexterityMode): void
-    {
-        $this->bonusDexterityMode = $bonusDexterityMode;
+        $this->bonusstrength_mode = $bonusstrength_mode;
     }
 
     /**
      * @return int
      */
-    public function getBonusDexterityValue(): int
+    public function getBonusstrengthvalue(): int
     {
-        return $this->bonusDexterityValue;
+        return $this->bonusstrength_value;
     }
 
     /**
-     * @param int $bonusDexterityValue
+     * @param int $bonusstrength_value
      */
-    public function setBonusDexterityValue(int $bonusDexterityValue): void
+    public function setBonusstrengthvalue(int $bonusstrength_value): void
     {
-        $this->bonusDexterityValue = $bonusDexterityValue;
-    }
-
-    /**
-     * @return int
-     */
-    public function getBonusInteligenceMode(): int
-    {
-        return $this->bonusInteligenceMode;
-    }
-
-    /**
-     * @param int $bonusInteligenceMode
-     */
-    public function setBonusInteligenceMode(int $bonusInteligenceMode): void
-    {
-        $this->bonusInteligenceMode = $bonusInteligenceMode;
+        $this->bonusstrength_value = $bonusstrength_value;
     }
 
     /**
      * @return int
      */
-    public function getBonusInteligenceValue(): int
+    public function getBonusdexteritymode(): int
     {
-        return $this->bonusInteligenceValue;
+        return $this->bonusdexterity_mode;
     }
 
     /**
-     * @param int $bonusInteligenceValue
+     * @param int $bonusdexterity_mode
      */
-    public function setBonusInteligenceValue(int $bonusInteligenceValue): void
+    public function setBonusdexteritymode(int $bonusdexterity_mode): void
     {
-        $this->bonusInteligenceValue = $bonusInteligenceValue;
-    }
-
-    /**
-     * @return int
-     */
-    public function getDamageMonsterBonusMode(): int
-    {
-        return $this->damageMonsterBonusMode;
-    }
-
-    /**
-     * @param int $damageMonsterBonusMode
-     */
-    public function setDamageMonsterBonusMode(int $damageMonsterBonusMode): void
-    {
-        $this->damageMonsterBonusMode = $damageMonsterBonusMode;
+        $this->bonusdexterity_mode = $bonusdexterity_mode;
     }
 
     /**
      * @return int
      */
-    public function getDamageMonsterBonusValue(): int
+    public function getBonusdexterityvalue(): int
     {
-        return $this->damageMonsterBonusValue;
+        return $this->bonusdexterity_value;
     }
 
     /**
-     * @param int $damageMonsterBonusValue
+     * @param int $bonusdexterity_value
      */
-    public function setDamageMonsterBonusValue(int $damageMonsterBonusValue): void
+    public function setBonusdexterityvalue(int $bonusdexterity_value): void
     {
-        $this->damageMonsterBonusValue = $damageMonsterBonusValue;
+        $this->bonusdexterity_value = $bonusdexterity_value;
+    }
+
+    /**
+     * @return int
+     */
+    public function getBonusinteligencemode(): int
+    {
+        return $this->bonusinteligence_mode;
+    }
+
+    /**
+     * @param int $bonusinteligence_mode
+     */
+    public function setBonusinteligencemode(int $bonusinteligence_mode): void
+    {
+        $this->bonusinteligence_mode = $bonusinteligence_mode;
+    }
+
+    /**
+     * @return int
+     */
+    public function getBonusinteligencevalue(): int
+    {
+        return $this->bonusinteligence_value;
+    }
+
+    /**
+     * @param int $bonusinteligence_value
+     */
+    public function setBonusinteligencevalue(int $bonusinteligence_value): void
+    {
+        $this->bonusinteligence_value = $bonusinteligence_value;
+    }
+
+    /**
+     * @return int
+     */
+    public function getDamagemonsterbonusmode(): int
+    {
+        return $this->damagemonsterbonus_mode;
+    }
+
+    /**
+     * @param int $damagemonsterbonus_mode
+     */
+    public function setDamagemonsterbonusmode(int $damagemonsterbonus_mode): void
+    {
+        $this->damagemonsterbonus_mode = $damagemonsterbonus_mode;
+    }
+
+    /**
+     * @return int
+     */
+    public function getDamagemonsterbonusvalue(): int
+    {
+        return $this->damagemonsterbonus_value;
+    }
+
+    /**
+     * @param int $damagemonsterbonus_value
+     */
+    public function setDamagemonsterbonusvalue(int $damagemonsterbonus_value): void
+    {
+        $this->damagemonsterbonus_value = $damagemonsterbonus_value;
     }
 
     /**
      * @return string
      */
-    public function getDamageMonsterBonusType(): string
+    public function getDamagemonsterbonustype(): string
     {
-        return $this->damageMonsterBonusType;
+        return $this->damagemonsterbonus_type;
     }
 
     /**
-     * @param string $damageMonsterBonusType
+     * @param string $damagemonsterbonus_type
      */
-    public function setDamageMonsterBonusType(string $damageMonsterBonusType): void
+    public function setDamagemonsterbonustype(string $damagemonsterbonus_type): void
     {
-        $this->damageMonsterBonusType = $damageMonsterBonusType;
+        $this->damagemonsterbonus_type = $damagemonsterbonus_type;
     }
 
     /**
@@ -506,15 +506,15 @@ class ItemsConfig
      */
     public function getNamePl(): string
     {
-        return $this->namePl;
+        return $this->name_pl;
     }
 
     /**
-     * @param string $namePl
+     * @param string $name_pl
      */
-    public function setNamePl(string $namePl): void
+    public function setNamePl(string $name_pl): void
     {
-        $this->namePl = $namePl;
+        $this->name_pl = $name_pl;
     }
 
     /**
@@ -522,14 +522,14 @@ class ItemsConfig
      */
     public function getNameEng(): string
     {
-        return $this->nameEng;
+        return $this->name_eng;
     }
 
     /**
-     * @param string $nameEng
+     * @param string $name_eng
      */
-    public function setNameEng(string $nameEng): void
+    public function setNameEng(string $name_eng): void
     {
-        $this->nameEng = $nameEng;
+        $this->name_eng = $name_eng;
     }
 }
