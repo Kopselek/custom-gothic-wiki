@@ -28,7 +28,14 @@ $damage = $_POST['damage'];
 //drop
 // inside $drop array = [1][2][3][4][5] and ['instance'] ['min'] ['max'] ['chance']
 // $drop[1]['instance'] example
-//$drop = $_POST['drop'];
+$dropUnserialized = [];
+foreach($_POST['drop'] as $dropPost) {
+    if(empty($dropPost['instance'])) {
+        continue;
+    }
+    $dropUnserialized[] = $dropPost;
+}
+$drop = serialize($dropUnserialized);
 
 //protection
 //inside protection array = [edge][blunt][point][fire][magic]
@@ -67,6 +74,8 @@ $model->setDamageMelee((int)$damage['melee']);
 $model->setDamageMeleeweapon((int)$damage['meleeweapon']);
 $model->setDamageRangedweapon((int)$damage['ranged']);
 $model->setDamageMagic((int)$damage['magic']);
+
+$model->setDrop($drop);
 
 $model->setProtectionEdge((int)$protection['edge']);
 $model->setProtectionBlunt((int)$protection['blunt']);

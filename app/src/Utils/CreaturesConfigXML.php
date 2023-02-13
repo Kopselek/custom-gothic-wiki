@@ -17,7 +17,10 @@ class CreaturesConfigXML
     public int $dexterity = 0;
     public int $experience = 0;
     public CreaturesDamage $damage;
-    public CreaturesDrop $drop;
+    /**
+     * @var CreaturesDrop[]
+     */
+    public array $drop;
     public CreaturesProtection $protection;
     public int $mindistance = 0;
     public int $maxdistance = 0;
@@ -54,13 +57,14 @@ class CreaturesConfigXML
         $damage->addChild('magic', $this->damage->magic);
 
         //drop group tag
-        //@TODO
-//        $drop = $xml->addChild('drop');
-//        $item = $drop->addChild('item');
-//        $item->addAttribute('instance', $this->drop->itemInstance);
-//        $item->addAttribute('min', $this->drop->min);
-//        $item->addAttribute('max', $this->drop->max);
-//        $item->addAttribute('chance', $this->drop->chance);
+        $drop = $xml->addChild('drop');
+        foreach($this->drop as $dropOne) {
+            $item = $drop->addChild('item');
+            $item->addAttribute('instance', $dropOne->itemInstance);
+            $item->addAttribute('min', $dropOne->min);
+            $item->addAttribute('max', $dropOne->max);
+            $item->addAttribute('chance', $dropOne->chance);
+        }
 
         //protection group tag
         $protection = $xml->addChild('protection');

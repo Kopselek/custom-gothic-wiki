@@ -31,8 +31,7 @@ class CreaturesManager extends BaseManager
             'damage_meleeweapon' => $model->getDamageMeleeweapon(),
             'damage_rangedweapon' => $model->getDamageRangedweapon(),
             'damage_magic' => $model->getDamageMagic(),
-            //TODO: drop missing
-            'drop' => "test",
+            'drop' => $model->getDrop(),
             'protection_edge' => $model->getProtectionEdge(),
             'protection_blunt' => $model->getProtectionBlunt(),
             'protection_point' => $model->getProtectionPoint(),
