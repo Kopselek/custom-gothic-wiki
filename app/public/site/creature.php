@@ -45,6 +45,83 @@
             }
         });
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded',
+            function () {
+                let drop = document.querySelector('#drop');
+                let add_drop = document.querySelector('#add_drop');
+                let remove_drop = document.querySelector('#remove_drop');
+                let dropNumber = 0
+
+                function addDrop() {
+                    if (dropNumber < 10) {
+                        let newDrop = document.createElement('div')
+                        newDrop.setAttribute('class', 'drop-' + dropNumber)
+
+                        let dropHeader = document.createElement('h3')
+                        dropHeader.innerText = 'Item ' + (dropNumber + 1)
+                        newDrop.appendChild(dropHeader)
+
+                        //Instance
+                        let dropInstanceLabel = document.createElement('label')
+                        let dropInstanceInput = document.createElement('input')
+                        dropInstanceLabel.setAttribute('for', 'drop-instance')
+                        dropInstanceLabel.innerText = 'Instance'
+                        dropInstanceInput.setAttribute('type', 'text')
+                        dropInstanceInput.setAttribute('name', 'drop[' + dropNumber + '][instance]')
+                        newDrop.appendChild(dropInstanceLabel)
+                        newDrop.appendChild(dropInstanceInput)
+
+                        //Min
+                        let dropMinLabel = document.createElement('label')
+                        let dropMinInput = document.createElement('input')
+                        dropMinLabel.setAttribute('for', 'drop-min')
+                        dropMinLabel.innerText = 'Min'
+                        dropMinInput.setAttribute('type', 'number')
+                        dropMinInput.setAttribute('name', 'drop[' + dropNumber + '][min]')
+                        newDrop.appendChild(dropMinLabel)
+                        newDrop.appendChild(dropMinInput)
+
+                        //Max
+                        let dropMaxLabel = document.createElement('label')
+                        let dropMaxInput = document.createElement('input')
+                        dropMaxLabel.setAttribute('for', 'drop-max')
+                        dropMaxLabel.innerText = 'Max'
+                        dropMaxInput.setAttribute('type', 'number')
+                        dropMaxInput.setAttribute('name', 'drop[' + dropNumber + '][max]')
+                        newDrop.appendChild(dropMaxLabel)
+                        newDrop.appendChild(dropMaxInput)
+
+                        //Chance
+                        let dropChanceLabel = document.createElement('label')
+                        let dropChanceInput = document.createElement('input')
+                        dropChanceLabel.setAttribute('for', 'drop-chance')
+                        dropChanceLabel.innerText = 'Chance'
+                        dropChanceInput.setAttribute('type', 'number')
+                        dropChanceInput.setAttribute('name', 'drop[' + dropNumber + '][chance]')
+                        newDrop.appendChild(dropChanceLabel)
+                        newDrop.appendChild(dropChanceInput)
+
+                        drop.appendChild(newDrop);
+                        dropNumber++
+                    } else {
+                        alert('Max number of Drop\'s reached.')
+                    }
+                }
+
+                function removeDrop() {
+                    if (dropNumber > 0) {
+                        drop.lastChild.remove()
+                        dropNumber--
+                    } else {
+                        alert('You can\'t remove drop wich not exist.')
+                    }
+                }
+
+                add_drop.addEventListener('click', addDrop);
+                remove_drop.addEventListener('click', removeDrop);
+            });
+    </script>
 </head>
 <body>
 
@@ -92,78 +169,8 @@
 
         <div id="drop">
             <h2>Drop</h2>
-            <button type="button">+</button>
-            <button type="button">-</button>
-            <div class="drop-0">
-                <h3>Item 0</h3>
-                <label for="drop-instance">Instance</label>
-                <input type="text" name="drop[0][instance]">
-                <label for="drop-min">Min</label>
-                <input type="number" name="drop[0][min]">
-                <label for="drop-max">Max</label>
-                <input type="number" name="drop[0][max]">
-                <label for="drop-chance">Chance</label>
-                <input type="number" name="drop[0][chance]">
-            </div>
-            <div class="drop-1">
-                <h3>Item 1</h3>
-                <label for="drop-instance">Instance</label>
-                <input type="text" name="drop[1][instance]">
-                <label for="drop-min">Min</label>
-                <input type="number" name="drop[1][min]">
-                <label for="drop-max">Max</label>
-                <input type="number" name="drop[1][max]">
-                <label for="drop-chance">Chance</label>
-                <input type="number" name="drop[1][chance]">
-            </div>
-
-            <div class="drop-2">
-                <h3>Item 2</h3>
-                <label for="drop-instance">Instance</label>
-                <input type="text" name="drop[2][instance]">
-                <label for="drop-min">Min</label>
-                <input type="number" name="drop[2][min]">
-                <label for="drop-max">Max</label>
-                <input type="number" name="drop[2][max]">
-                <label for="drop-chance">Chance</label>
-                <input type="number" name="drop[2][chance]">
-            </div>
-
-            <div class="drop-3">
-                <h3>Item 3</h3>
-                <label for="drop-instance">Instance</label>
-                <input type="text" name="drop[3][instance]">
-                <label for="drop-min">Min</label>
-                <input type="number" name="drop[3][min]">
-                <label for="drop-max">Max</label>
-                <input type="number" name="drop[3][max]">
-                <label for="drop-chance">Chance</label>
-                <input type="number" name="drop[3][chance]">
-            </div>
-
-            <div class="drop-4">
-                <h3>Item 4</h3>
-                <label for="drop-instance">Instance</label>
-                <input type="text" name="drop[4][instance]">
-                <label for="drop-min">Min</label>
-                <input type="number" name="drop[4][min]">
-                <label for="drop-max">Max</label>
-                <input type="number" name="drop[4][max]">
-                <label for="drop-chance">Chance</label>
-                <input type="number" name="drop[4][chance]">
-            </div>
-
-            <div class="drop-5">
-                <h3>Item 5</h3>
-                <label for="drop-instance">Instance</label>
-                <input type="text" name="drop[5][instance]">
-                <label for="drop-min">Min</label>
-                <input type="number" name="drop[5][min]">
-                <label for="drop-max">Max</label>
-                <input type="number" name="drop[5][max]">
-                <label for="drop-chance">Chance</label>
-                <input type="number" name="drop[5][chance]">
-            </div>
+            <button type="button" id="add_drop">+</button>
+            <button type="button" id="remove_drop">-</button>
 
 
     </div>
