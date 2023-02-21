@@ -56,10 +56,10 @@
                 function addDrop() {
                     if (dropNumber < 10) {
                         let newDrop = document.createElement('div')
-                        newDrop.setAttribute('class', 'drop-' + dropNumber)
+                        newDrop.setAttribute('class', `drop-${dropNumber}`)
 
                         let dropHeader = document.createElement('h3')
-                        dropHeader.innerText = 'Item ' + (dropNumber + 1)
+                        dropHeader.innerText = `Item ${dropNumber + 1}`
                         newDrop.appendChild(dropHeader)
 
                         //Instance
@@ -68,7 +68,7 @@
                         dropInstanceLabel.setAttribute('for', 'drop-instance')
                         dropInstanceLabel.innerText = 'Instance'
                         dropInstanceInput.setAttribute('type', 'text')
-                        dropInstanceInput.setAttribute('name', 'drop[' + dropNumber + '][instance]')
+                        dropInstanceInput.setAttribute('name', `drop[${dropNumber}][instance]`)
                         newDrop.appendChild(dropInstanceLabel)
                         newDrop.appendChild(dropInstanceInput)
 
@@ -78,7 +78,7 @@
                         dropMinLabel.setAttribute('for', 'drop-min')
                         dropMinLabel.innerText = 'Min'
                         dropMinInput.setAttribute('type', 'number')
-                        dropMinInput.setAttribute('name', 'drop[' + dropNumber + '][min]')
+                        dropMinInput.setAttribute('name', `drop[${dropNumber}][min]`)
                         newDrop.appendChild(dropMinLabel)
                         newDrop.appendChild(dropMinInput)
 
@@ -88,7 +88,7 @@
                         dropMaxLabel.setAttribute('for', 'drop-max')
                         dropMaxLabel.innerText = 'Max'
                         dropMaxInput.setAttribute('type', 'number')
-                        dropMaxInput.setAttribute('name', 'drop[' + dropNumber + '][max]')
+                        dropMaxInput.setAttribute('name', `drop[${dropNumber}][max]`)
                         newDrop.appendChild(dropMaxLabel)
                         newDrop.appendChild(dropMaxInput)
 
@@ -98,7 +98,7 @@
                         dropChanceLabel.setAttribute('for', 'drop-chance')
                         dropChanceLabel.innerText = 'Chance'
                         dropChanceInput.setAttribute('type', 'number')
-                        dropChanceInput.setAttribute('name', 'drop[' + dropNumber + '][chance]')
+                        dropChanceInput.setAttribute('name', `drop[${dropNumber}][chance]`)
                         newDrop.appendChild(dropChanceLabel)
                         newDrop.appendChild(dropChanceInput)
 
